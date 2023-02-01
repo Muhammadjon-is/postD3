@@ -3,6 +3,7 @@ import listEndpoints from "express-list-endpoints";
 import cors from "cors"
 import { badRequestErrorHandler, forbiddenErrorHandler, genericErrorHandler, notFoundErrorHandler, unauthorizedErrorHandler } from "./errorHandler.js";
 import shoppingRouter from "../Shop/index.js";
+import { shoppingConnect, shoppingSync } from "../Shop/db.js";
 
 
 const app = express();
@@ -19,6 +20,10 @@ app.use(notFoundErrorHandler)
 app.use(unauthorizedErrorHandler)
 app.use(forbiddenErrorHandler)
 app.use(genericErrorHandler)
+
+await shoppingConnect(),
+await shoppingSync()
+
 
 app.listen(PORT, () => {
   console.table(listEndpoints(app));

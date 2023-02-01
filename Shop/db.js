@@ -1,8 +1,8 @@
 import { Sequelize } from "sequelize";
 
-const {PG_ADMIN_PASSWORD,  PG_ADMIN_USER , PG_ADMIN_NAME , PG_HOST ,     PG_PORT} = process.env
+const {PG_ADMIN_PASSWORD,  PG_ADMIN_USER , PG_DB_NAME , PG_HOST ,  PG_PORT} = process.env
 
-const shopping = new Sequelize(PG_ADMIN_NAME,PG_ADMIN_PASSWORD, PG_ADMIN_USER,
+const shopping = new Sequelize(PG_DB_NAME, PG_ADMIN_USER, PG_ADMIN_PASSWORD, 
     {
         host:PG_HOST,
         port:PG_PORT,

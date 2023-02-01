@@ -26,7 +26,7 @@ import shopping  from "./db.js";
         allowNull:false
      },
      price:{
-        type:DataTypes.NUMBER,
+        type:DataTypes.INTEGER,
         allowNull:false
      }
     }
