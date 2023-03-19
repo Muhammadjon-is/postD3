@@ -75,6 +75,7 @@ import ShoppingCart from "./model.js"
     }catch(error){
         console.log(error);
     }
+    
   })
 
 
